@@ -6,6 +6,10 @@ from .models import Product, Tag
 class TagAdmin(admin.ModelAdmin):
     pass
 
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    pass
+
 @admin.register(Product)
 class BookAdmin(admin.ModelAdmin):
     list_display = ("name", "category", "description")
