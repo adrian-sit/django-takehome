@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import Product, Tag
+from .models import Product, Tag, Category
 
 # Register your models here.
-@admin.register(Tag)
-class TagAdmin(admin.ModelAdmin):
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
     pass
 
 @admin.register(Tag)
