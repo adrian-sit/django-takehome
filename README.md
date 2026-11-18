@@ -13,7 +13,7 @@ python manage.py migrate
 python manage.py loaddata products
 ```
 
-Start the Django development server:
+To start the Django development server, run:
 
 ```powershell
 python manage.py runserver
