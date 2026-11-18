@@ -1,0 +1,461 @@
+[
+{
+  "model": "catalog.category",
+  "pk": 1,
+  "fields": {
+    "name": "Mechanical"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 2,
+  "fields": {
+    "name": "Electrical"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 3,
+  "fields": {
+    "name": "Sensors"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 4,
+  "fields": {
+    "name": "Hydraulics"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 5,
+  "fields": {
+    "name": "Automation"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 6,
+  "fields": {
+    "name": "Fasteners"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 7,
+  "fields": {
+    "name": "Safety"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 1,
+  "fields": {
+    "name": "High Temp"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 2,
+  "fields": {
+    "name": "Heavy Duty"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 3,
+  "fields": {
+    "name": "Stainless Steel"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 4,
+  "fields": {
+    "name": "Waterproof"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 5,
+  "fields": {
+    "name": "Corrosion Resistant"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 6,
+  "fields": {
+    "name": "Precision"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 7,
+  "fields": {
+    "name": "Industrial"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 8,
+  "fields": {
+    "name": "High Voltage"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 9,
+  "fields": {
+    "name": "High Pressure"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 10,
+  "fields": {
+    "name": "Energy Efficient"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 11,
+  "fields": {
+    "name": "Low Maintenance"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 12,
+  "fields": {
+    "name": "Safety Critical"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 1,
+  "fields": {
+    "name": "Ball Bearing",
+    "description": "Precision bearing designed to reduce friction in rotating shafts, motors, and industrial equipment.",
+    "category": 1,
+    "tags": [
+      6,
+      11
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 2,
+  "fields": {
+    "name": "Gear Reducer",
+    "description": "Heavy-duty gearbox used to reduce rotational speed and increase torque in conveyors and mechanical drives.",
+    "category": 1,
+    "tags": [
+      2,
+      7
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 3,
+  "fields": {
+    "name": "Heat Exchanger",
+    "description": "Thermal transfer component designed to regulate fluid temperatures in industrial processing and cooling systems.",
+    "category": 1,
+    "tags": [
+      1,
+      3,
+      5
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 4,
+  "fields": {
+    "name": "Rotary Seal",
+    "description": "Mechanical shaft seal designed to prevent fluid leakage in pumps and rotating equipment.",
+    "category": 1,
+    "tags": [
+      9,
+      11
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 5,
+  "fields": {
+    "name": "Three-Phase Motor",
+    "description": "Energy-efficient electric motor used to power pumps, compressors, and manufacturing machinery.",
+    "category": 2,
+    "tags": [
+      2,
+      10
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 6,
+  "fields": {
+    "name": "Power Transformer",
+    "description": "High-voltage transformer used for electrical power conversion and distribution in industrial facilities.",
+    "category": 2,
+    "tags": [
+      7,
+      8,
+      12
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 7,
+  "fields": {
+    "name": "Cable Junction Box",
+    "description": "Waterproof electrical enclosure designed to protect cable connections in outdoor and wet environments.",
+    "category": 2,
+    "tags": [
+      4,
+      5
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 8,
+  "fields": {
+    "name": "Industrial Relay",
+    "description": "Electromechanical switching device used to control electrical circuits in machinery and control panels.",
+    "category": 2,
+    "tags": [
+      7
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 9,
+  "fields": {
+    "name": "Pressure Transducer",
+    "description": "Precision sensor used to measure fluid pressure in hydraulic systems and industrial pipelines.",
+    "category": 3,
+    "tags": [
+      6,
+      9
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 10,
+  "fields": {
+    "name": "Thermocouple Probe",
+    "description": "Temperature measurement sensor designed for high-heat furnaces, ovens, and manufacturing processes.",
+    "category": 3,
+    "tags": [
+      1,
+      6
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 11,
+  "fields": {
+    "name": "Proximity Sensor",
+    "description": "Non-contact sensor used to detect metal objects and monitor positions in automated assembly lines.",
+    "category": 3,
+    "tags": [
+      7,
+      11
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 12,
+  "fields": {
+    "name": "Flow Meter",
+    "description": "Instrument used to measure liquid flow rates in chemical processing and water distribution pipelines.",
+    "category": 3,
+    "tags": [
+      5,
+      6
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 13,
+  "fields": {
+    "name": "Hydraulic Pump",
+    "description": "Heavy-duty pump that generates fluid pressure for lifting equipment, presses, and industrial machinery.",
+    "category": 4,
+    "tags": [
+      2,
+      9
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 14,
+  "fields": {
+    "name": "Pneumatic Cylinder",
+    "description": "Compressed-air actuator designed to produce linear movement in packaging and automation equipment.",
+    "category": 4,
+    "tags": [
+      10,
+      11
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 15,
+  "fields": {
+    "name": "Hydraulic Hose",
+    "description": "Reinforced flexible hose designed to transfer pressurized hydraulic fluid between pumps and actuators.",
+    "category": 4,
+    "tags": [
+      5,
+      9
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 16,
+  "fields": {
+    "name": "Solenoid Valve",
+    "description": "Electrically operated valve used to control fluid flow in hydraulic and pneumatic systems.",
+    "category": 4,
+    "tags": [
+      6,
+      7
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 17,
+  "fields": {
+    "name": "Hydraulic Accumulator",
+    "description": "Pressure storage device used to stabilize hydraulic systems, absorb pressure fluctuations, and provide emergency fluid power.",
+    "category": 4,
+    "tags": [
+      7,
+      9,
+      12
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 18,
+  "fields": {
+    "name": "Logic Controller",
+    "description": "Programmable controller used to coordinate industrial machinery, process inputs, and automated production lines.",
+    "category": 5,
+    "tags": [
+      7,
+      10
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 19,
+  "fields": {
+    "name": "Robotic Gripper",
+    "description": "Precision end-effector designed to grasp and position components during robotic assembly operations.",
+    "category": 5,
+    "tags": [
+      2,
+      6
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 20,
+  "fields": {
+    "name": "Hex Bolt",
+    "description": "Stainless steel threaded fastener used for mechanical assemblies and equipment installations in corrosive environments.",
+    "category": 6,
+    "tags": [
+      3,
+      5
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 21,
+  "fields": {
+    "name": "Anchor Bolt",
+    "description": "Heavy-duty structural fastener used to secure industrial machines and support frames to concrete foundations.",
+    "category": 6,
+    "tags": [
+      2
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 22,
+  "fields": {
+    "name": "Spring Washer",
+    "description": "Precision washer designed to maintain fastening tension and reduce loosening caused by vibration.",
+    "category": 6,
+    "tags": [
+      6,
+      11
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 23,
+  "fields": {
+    "name": "Emergency Stop Switch",
+    "description": "Safety control device designed to immediately shut down industrial machinery during hazardous conditions.",
+    "category": 7,
+    "tags": [
+      7,
+      12
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 24,
+  "fields": {
+    "name": "Pressure Relief Valve",
+    "description": "Protective valve designed to release excess pressure in industrial piping and pressurized equipment.",
+    "category": 7,
+    "tags": [
+      9,
+      12
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 25,
+  "fields": {
+    "name": "Fire-Resistant Cable",
+    "description": "High-temperature electrical cable designed to maintain circuit integrity in specified fire emergency conditions.",
+    "category": 7,
+    "tags": [
+      1,
+      12
+    ]
+  }
+}
+]
