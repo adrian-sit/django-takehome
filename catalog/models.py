@@ -1,6 +1,12 @@
 from django.db import models
 
-# Create your models here.
+"""
+Database models for the product catalog
+
+Defines products, categories, and tags, including their
+relationships to support product searching and filtering
+"""
+
 class Category(models.Model):
     name = models.CharField(max_length=30, unique=True)
 

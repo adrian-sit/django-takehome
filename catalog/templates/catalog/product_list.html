@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .filters {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .filter-group {
+            margin-bottom: 20px;
+        }
+
+        .filter-group > label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input[type="search"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        fieldset {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 12px;
+        }
+
+        legend {
+            font-weight: bold;
+        }
+
+        .checkbox-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 20px;
+            margin-top: 12px;
+        }
+
+        .checkbox-options label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .logic-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .logic-options label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .filter-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        button,
+        .clear-button {
+            padding: 10px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .apply-button {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+        }
+
+        .clear-button {
+            background-color: #e5e7eb;
+            color: #333;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 16px;
+            margin-bottom: 15px;
+        }
+
+        .product h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .product-category {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .product-tags {
+            margin-top: 12px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #e5e7eb;
+            border-radius: 4px;
+            padding: 3px 8px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-size: 12px;
+        }
+
+        .no-results {
+            color: #666;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Product Catalog</h1>
+    <p>Browse and search manufacturing and engineering products.</p>
+
+    <!-- AI-generated HTML scaffold for product search and filtering. -->
+
+    <form method="get" class="filters">
+
+        <!-- Description Search -->
+        <div class="filter-group">
+            <label for="search">Search by Description</label>
+
+            <input
+                type="search"
+                id="search"
+                name="q"
+                value="{{ search_query }}"
+                placeholder="Enter description keywords..."
+            >
+        </div>
+
+        <!-- Category Filters -->
+        <div class="filter-group">
+            <fieldset>
+                <legend>Categories</legend>
+
+                <div class="checkbox-options">
+                    {% for category in categories %}
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="categories"
+                                value="{{ category.id }}"
+                                {% if category.id|stringformat:"s" in selected_categories %}checked{% endif %}
+                            >
+                            {{ category.name }}
+                        </label>
+                    {% empty %}
+                        <p>No categories available.</p>
+                    {% endfor %}
+                </div>
+
+            </fieldset>
+        </div>
+
+        <!-- Tag Filters -->
+        <div class="filter-group">
+            <fieldset>
+                <legend>Tags</legend>
+
+                <div class="checkbox-options">
+                    {% for tag in tags %}
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="tags"
+                                value="{{ tag.id }}"
+                                {% if tag.id|stringformat:"s" in selected_tags %}checked{% endif %}
+                            >
+                            {{ tag.name }}
+                        </label>
+                    {% empty %}
+                        <p>No tags available.</p>
+                    {% endfor %}
+                </div>
+
+                <div class="logic-options">
+                    <label>
+                        <input
+                            type="radio"
+                            name="tag_logic"
+                            value="or"
+                            {% if tag_logic == "or" %}checked{% endif %}
+                        >
+                        Match any selected tag
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="tag_logic"
+                            value="and"
+                            {% if tag_logic == "and" %}checked{% endif %}
+                        >
+                        Match all selected tags
+                    </label>
+                </div>
+            </fieldset>
+        </div>
+
+        <!-- Category and Tag Group Logic -->
+        <div class="filter-group">
+            <fieldset>
+                <legend>Combine Category and Tag Filters</legend>
+
+                <div class="logic-options">
+                    <label>
+                        <input
+                            type="radio"
+                            name="group_logic"
+                            value="or"
+                            {% if group_logic == "or" %}checked{% endif %}
+                        >
+                        Match either group
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="group_logic"
+                            value="and"
+                            {% if group_logic == "and" %}checked{% endif %}
+                        >
+                        Match both groups
+                    </label>
+                </div>
+            </fieldset>
+        </div>
+
+        <!-- Filter Actions -->
+        <div class="filter-actions">
+            <button type="submit" class="apply-button">
+                Apply Filters
+            </button>
+
+            <a
+                href="{% url 'catalog:product_list' %}"
+                class="clear-button"
+            >
+                Clear Filters
+            </a>
+        </div>
+
+    </form>
+
+    <!-- Product Results -->
+    <section class="product-results">
+
+        <h2>Products ({{ products|length }})</h2>
+
+        {% for product in products %}
+
+            <article class="product">
+
+                <h3>{{ product.name }}</h3>
+
+                <p class="product-category">
+                    <strong>Category:</strong>
+                    {{ product.category.name }}
+                </p>
+
+                <p>{{ product.description }}</p>
+
+                <div class="product-tags">
+                    <strong>Tags:</strong>
+
+                    {% for tag in product.tags.all %}
+                        <span class="tag">{{ tag.name }}</span>
+                    {% empty %}
+                        <span>No tags</span>
+                    {% endfor %}
+                </div>
+
+            </article>
+
+        {% empty %}
+
+            <p class="no-results">
+                No products match your search or filters.
+            </p>
+
+        {% endfor %}
+
+    </section>
+
+</body>
+</html>
+
